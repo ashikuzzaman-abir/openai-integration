@@ -1,5 +1,6 @@
-const rateLimiter = require("express-rate-limit");
 
+
+const rateLimiter = require("express-rate-limit");
 
 export const davinci3pm = rateLimiter({
   windowMs: 1 * 60 * 1000,
@@ -7,6 +8,7 @@ export const davinci3pm = rateLimiter({
   standardHeaders: true,
   legacyHeaders:false,
   message: "Too many request, please try again later",
+  statusCode: 429,
 });
 
 
